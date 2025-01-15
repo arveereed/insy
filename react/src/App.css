@@ -1,0 +1,131 @@
+/* Please note this document will be updated as time goes by. Thank you */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: "Poppins", sans-serif;
+    }
+
+    * {
+        user-select: none;
+    }
+
+    .profile-menu {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .menu-button {
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .dropdown {
+        @apply bg-[#D9D9D9] shadow-lg absolute top-10 right-0 rounded-lg overflow-hidden font-light w-[350px]
+      }
+
+      .dropdown button,
+      .dropdown a{
+       @apply hover:bg-[#5C432E] hover:text-white pl-4 pr-8 py-2 mb-1 grid place-content-center
+      }
+      
+      .dropdown a:hover {
+        background-color: #5C432E;
+        color: white;
+      }
+      
+      .dropdown a:last-child {
+        border-bottom: none;
+      }
+
+
+      /* Apply styles for the scrollbar */
+      .custom-scrollbar {
+        overflow-y: auto;
+        position: relative;
+        max-height: 600px;
+        margin-right: -10px; /* Pulls the scrollbar slightly outside */
+        padding-right: 10px; /* Keeps the content inside */
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 10px;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #888;
+      }
+      
+}
+
+@layer components {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"], textarea {
+        @apply block w-full rounded-md border-0 p-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm bg-white;
+    }
+    label {
+        @apply block text-sm font-medium leading-6 text-slate-900 first-letter:capitalize;
+    }
+
+    nav {
+        @apply h-[79px] max-w-screen-lg mx-auto flex items-center justify-between;
+    }
+    main {
+        @apply max-w-screen-lg mx-auto;
+    }
+    .primary-btn {
+        @apply flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-slate-400 disabled:cursor-wait;
+    }
+    .text-link {
+        @apply font-semibold text-blue-500 hover:text-blue-600;
+    }
+    .nav-link {
+        @apply text-white bg-[#5C432E] font-light h-[38px] w-[104px];
+    }
+    .title {
+        @apply my-6 text-center text-3xl font-bold leading-9 text-slate-900;
+    }
+    .error {
+        @apply text-xs text-red-500 mt-1;
+    }
+    table {
+        @apply w-full text-sm text-left rounded-md shadow-lg overflow-hidden mb-6 table-auto bg-white;
+    }
+    thead {
+        @apply text-xs uppercase font-medium border-b border-slate-100 text-slate-600;
+    }
+    tbody tr {
+        @apply hover:bg-slate-100 w-full p-0;
+    }
+    th {
+        @apply px-6 py-4;
+    }
+    td {
+        @apply px-6 py-4 border-b border-slate-100;
+    }
+    .avatar {
+        @apply w-8 h-8 rounded-full overflow-hidden object-center object-cover;
+    }
+
+    .container-bg {
+        background-color: rgba(204, 186, 172,.88);
+    }
+}
